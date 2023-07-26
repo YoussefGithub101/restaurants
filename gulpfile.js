@@ -34,7 +34,7 @@ function cssTask() {
     // minify
     .pipe(cleanCSS())
     // move to dist
-    .pipe(dest("dist/assets/css"))
+    .pipe(dest("dist/css"))
 }
 
 
@@ -46,7 +46,7 @@ function jsTask() {
     return src(globs.js,{sourcemaps:true})
     .pipe(concat("script.min.js"))
     .pipe(terser())
-    .pipe(dest("dist/assets/js" ,{sourcemaps:"."}))
+    .pipe(dest("dist/javascript" ,{sourcemaps:"."}))
 }
 
 
@@ -69,7 +69,7 @@ function imgTask() {
             quality: 80,
         },
     }}))
-    .pipe(dest('dist/assets/images'))
+    .pipe(dest('dist/images'))
 }
 exports.img = imgTask
 
